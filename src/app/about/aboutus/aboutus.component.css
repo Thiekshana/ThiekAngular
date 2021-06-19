@@ -1,0 +1,18 @@
+p{
+  display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.l-container
+{
+  max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.card{
+  box-shadow: 0 1px 16px 0 rgb(0 0 0 / 20%), 0 2px 8px 0 rgb(0 0 0 / 14%), 0 4px 8px -1px rgb(0 0 0 / 12%);
+  margin-bottom: 10px;
+}

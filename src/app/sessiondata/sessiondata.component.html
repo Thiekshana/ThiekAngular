@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card-login-form">
+    <div class="card-body">
+      <app-contact (postUsersData)="getRegisteredUsers($event)"></app-contact>
+      <h3 class="card-title text-center text-danger text-underline">
+        List of Registered Users
+      </h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <button
+    type="submit"
+    name="submit"
+    class="btn btn-info"
+    (click)="retrieveData()"
+  >
+    Retrieve Session Data
+  </button>
+  <div class="row" style="margin-top: 50px;">
+    <div class="contact-info col-sm-4" *ngFor="let userInfo of userContactInfo">
+      <hr />
+      <p>First Name : {{ userInfo.firstname }}</p>
+      <p>Last Name : {{ userInfo.lastname }}</p>
+      <p>Email : {{ userInfo.email }}</p>
+      <p>CountryAddress : {{ userInfo.country }}</p>
+      <p>Address : {{ userInfo.address }}</p>
+      <hr />
+    </div>
+  </div>
+</div>

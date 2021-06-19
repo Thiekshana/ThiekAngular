@@ -1,0 +1,11 @@
+  <div class="container-fluid">
+    <div class="card-login-form">
+      <div class="card-body" style="text-align: center;">
+        <label style="font-size: large;margin-right:50px;"> Enter Post Number to View</label>
+        <input #number style="margin-right:50px;width: 100px;">
+        <button class="btn btn-success" type="button" (click) = "showPost(number.value)">Show Post</button>
+      </div>
+    </div>
+  </div>
+
+<app-posts></app-posts>

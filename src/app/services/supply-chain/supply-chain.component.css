@@ -1,0 +1,185 @@
+.-bg-lightest-grey{
+  background-color: #f0f0f0;
+}
+
+.hero-section{
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+}
+.nga-hero-section.default.no-image {
+  text-shadow: none;
+  height: auto;
+  width: auto;
+}
+
+.hero-text-container{
+  text-align: center;
+  position: relative;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  height: auto;
+  width: auto;
+}
+.wrapper{
+min-width: 90rem;
+margin-left: auto;
+margin-right: auto;
+height: auto;
+width: auto;
+}
+.content-wrapper{
+  align-self: center;
+  width: 90%;
+  padding-left: 100px;
+  height: auto;
+  width: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.cards__item {
+  flex-basis: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four cardcolumns side by side */
+.cardcolumn {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.cardrow {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.cardrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the cards (no bootsrap version)*/
+.cardBody{
+ 
+  
+}
+.nobscard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  margin-top: 10px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.cardTitle{
+  display: flex;
+  justify-content: center;
+  overflow-wrap: break-word;
+  background-color: rgb(205, 218, 255);
+  position: relative;
+  color: rgb(2, 1, 83);
+  font-weight: 500;
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 100px;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.post .twocol .firstcol{
+  float:left; 
+  width:48%; 
+  margin-top: 50px;
+
+}
+
+
+.post .twocol .firstcol img{
+  height: 600px;
+  border-radius: 50px;
+}
+
+.post .twocol .secondcol{
+  color: rgb(99, 0, 0);
+  float:left; 
+  width:49%; 
+  margin:0 1%; 
+  margin-top: 100px;
+  height: auto;
+  font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-stretch: expanded;
+  word-wrap:normal;
+}
+
+
+.cardText{
+  flex-direction:row;
+  height: 100px;
+  text-align: left;
+  font-weight: 400;
+  font-style: italic;
+}
+
+button{
+  margin-top: 50px;
+  background-color: rgb(2, 0, 119);
+  color: #f0f0f0;
+}
+h2{
+  color: rgb(188, 0, 245);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .cardcolumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 481px){
+  .hero-section.default {
+    display: inline;
+    min-height: 50px;
+  }
+  .hero-text-container{
+    display: inline;
+    text-align: left;
+  }
+  .wrapper{
+    display: inline;
+  }
+
+  .content-wrapper{
+    display: inline;
+  }
+
+  h1{
+    display: inline;
+  }
+
+
+}

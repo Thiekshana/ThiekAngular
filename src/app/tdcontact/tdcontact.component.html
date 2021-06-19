@@ -1,0 +1,68 @@
+<div class="container" >
+  <div class="card login-form">
+    <div card-body class="p-3">
+      <h3 class="card-title text-center text-danger"> Register for Your Angular Course (Template-Driven)</h3>
+      <div class="card-text p-1">
+      <form (ngSubmit)="handleSubmit()" #f="ngForm">
+        <div class="form-group">
+        <label for="firstname"  class="form-label">First Name</label>
+        <input type="text" #firstnameInput name="firstname" appForbiddennames class="form-control" #firstname = "ngModel" ngModel
+        [ngClass]="{'is-invalid':f.submitted && firstname.invalid}" required minlength="3">
+        <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
+        <div *ngIf="firstname.errors.required">First Name should not be empty</div>
+        <div *ngIf="firstname.errors.minlength">FirstName should be minimum 3 characters</div>
+      </div>
+        </div>
+        <div class="form-group">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" name="lastname" class="form-control" ngModel #lastname="ngModel" ngModel [ngClass]="{'is-invalid':f.submitted && lastname.invalid}"  required minlength="3">
+        <div *ngIf="f.submitted && lastname.invalid" class="invalid-feedback">
+          <div *ngIf="lastname.errors.required">Last Name should not be empty
+          </div>
+          <div *ngIf="lastname.errors.minlength">Last Name should be minimum 3 characters</div>
+        </div>
+        </div>
+        <div class="form-group">
+        <label for="email" class="form-label">Email</label> 
+        <input type="email" name="email" class="form-control" ngModel #email="ngModel" ngModel [ngClass]="{'is-invalid':f.submitted && email.invalid}"  required>
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">Email should not be empty</div>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <select class="form-control" name="country" ngModel #country="ngModel" ngModel [ngClass]="{'is-invalid': f.submitted && country.invalid}" required >
+            <option value=""> ...select...</option>
+            <option value="SG">Singapore</option>
+            <option value="IN">India</option>
+            <option value="USA">United States</option>
+          </select>
+          <div *ngIf="f.submitted && country.invalid" class="invalid-feedback">
+          <div *ngIf="country.errors.required">Select a country from the list
+          </div>
+        </div>
+        </div>
+        <div class="form-group" >
+          <label>Address</label>
+          <textarea class="form-control" name="address" ngModel #address="ngModel" ngModel [ngClass]="{'is-invalid':f.submitted && address.errors}" required></textarea>
+          <div *ngIf="f.submitted && address.invalid" class="invalid-feedback" >
+            <div *ngIf="address.errors.required">Address can't be empty
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="submit" name="singup" class="btn btn-primary">
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>firstname: {{user.firstname}}</p>
+      <p>lastname: {{user.lastname}}</p>
+      <p>email: {{user.email}}</p>
+      <p>country: {{user.country}}</p>
+      <p>address: {{user.address}}</p>
+    </div>
+  </div>
+</div>

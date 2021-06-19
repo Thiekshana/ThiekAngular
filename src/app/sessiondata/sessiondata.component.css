@@ -1,0 +1,18 @@
+th, td{
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.table .table-hover:hover{
+  color:rgb(0, 80, 104);
+}
+
+.contact-info{
+background-color: rgb(238, 237, 236);
+margin-bottom: 25px;
+}
+
+p{
+  margin-top: 10px;
+}

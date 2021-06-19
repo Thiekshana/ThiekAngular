@@ -1,0 +1,65 @@
+<div class="container" >
+  <div class="card login-form">
+    <div card-body class="p-3">
+      <h3 class="card-title text-center text-danger"> Register for Your Angular Course (Reactive)</h3>
+      <div class="card-text p-1">
+      <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" #firstnameInput name="firstname" class="form-control" formControlName="firstname" [ngClass]="{'is-invalid':submitted && f.firstname.errors}" required minlength="3">
+        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.required">First Name should not be empty
+        </div>
+        <div *ngIf="f.firstname.errors.minlength">First name should be at least 3 characters
+        </div>
+        <div *ngIf="f.firstname.errors.nameIsForbidden">This name is forbidden. Please choose a different name
+        </div>
+      </div>
+        </div>
+        <div class="form-group">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" name="lastname" class="form-control" formControlName="lastname" [ngClass]="{'is-invalid':submitted && f.firstname.errors}">
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="f.lastname.errors.required">Last Name should not be empty
+          </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <label for="email" class="form-label">Email</label> 
+        <input type="email" name="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}">
+        <div *ngIf="f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email should not be empty</div>
+          <div *ngIf="f.email.errors.email">Please enter valid email</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <select class="form-control" formControlName="country" [ngClass]="{'is-invalid': submitted && f.country.errors}">
+            <option value=""> ...select...</option>
+            <option value="SG">Singapore</option>
+            <option value="IN">India</option>
+            <option value="USA">United States</option>
+          </select>
+          <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+          <div *ngIf="f.country.errors.required">Select a country from the list
+          </div>
+        </div>
+        </div>
+        <div class="form-group" >
+          <label>Address</label>
+          <textarea class="form-control" formControlName="address" [ngClass]="{'is-invalid':submitted && f.address.errors}"></textarea>
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+            <div *ngIf="f.address.errors.required">Address can't be empty
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="submit" name="singup" class="btn btn-primary">
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="['/tdcontact']" type="button" >Contact (Template Driven) Page</a>
+  <a [routerLink]="['/sessiondata']" type="button" style="margin-left: 50px;" >Retrieve Session Data Page</a>
+</div>
