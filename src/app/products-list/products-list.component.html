@@ -1,0 +1,22 @@
+<div class="row">
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="list-group-item clearfix" *ngFor = "let product of products;let i=index">
+      <div class="float-left">
+        <h4 class="list-group-item-heading">{{product.productTitle}}</h4>
+        <p class="list-group-item-text">{{product.productDescription}}</p>
+      </div>
+      <div class="float-right">
+        <img src="{{product.productImage}}" alt="" class="img-responsive" style="height: 50px;width:50px;">
+      </div>
+      <form>
+        <label for="Price">Price </label>
+        <input type="number" #pPrice name="pPrice" class="form-control" />
+        <label for="Price">Quantity </label>
+        <input type="number" #pQty name="pQty" class="form-control" value="pQty"/>
+        <button class="btn btn-success" (click)="addProducttoList(i,pPrice.value,pQty.value)">Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>

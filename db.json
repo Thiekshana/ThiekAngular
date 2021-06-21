@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Nicholas",
+      "lastname": "Girraf",
+      "email": "Nicholas@outlook.com",
+      "country": "USA",
+      "address": "no: 1/81, Ratnapura, US"
+    },
+    {
+      "id": 2,
+      "firstname": "Dilani",
+      "lastname": "Soysa",
+      "email": "dilani@gmail.com",
+      "country": "SG",
+      "address": "no: 1/71, Colombo, SriLanka"
+    },
+    {
+      "id": 3,
+      "firstname": "Mark",
+      "lastname": "Dan",
+      "email": "markweb@gmail.com",
+      "country": "IN",
+      "address": "Aukland, NewZealand"
+    },
+    {
+      "id": 4,
+      "firstname": "Jane",
+      "lastname": "Doagh",
+      "email": "Jane81@gmail.com",
+      "country": "USA",
+      "address": "No:16/900,Gabriel Road, United States"
+    },
+    {
+      "id": 5,
+      "firstname": "Lee",
+      "lastname": "Zin Zoo",
+      "email": "LeeZinZoo@gmail.com",
+      "country": "IN",
+      "address": "no: 13/130, China Road, China"
+    },
+    {
+      "firstname": "Thiekshana",
+      "lastname": "Soysa",
+      "address": "Blk 685A, Choa Chu Kang Street\n#10-276",
+      "email": "actmasters@live.co.uk",
+      "country": "IN",
+      "id": 6
+    },
+    {
+      "firstname": "Nicki",
+      "lastname": "Minar",
+      "address": "38 JALAN PEMIMPIN. #5 -8, M38 SINGAPORE 577178",
+      "email": "nicky@gmail.com",
+      "country": "USA",
+      "id": 7
+    }
+  ]
+}

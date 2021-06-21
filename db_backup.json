@@ -1,0 +1,44 @@
+{
+"posts":[
+  {
+    "id":1,
+    "firstname": "Thiekshana",
+    "lastname": "Soysa",
+    "emailaddress": "thiekshanas@gmail.com",
+    "country":"SriLanka",
+    "address":"no: 1/81, Ratnapura, SriLanka"
+  },
+  {
+    "id":2,
+    "firstname": "Dilani",
+    "lastname": "Soysa",
+    "emailaddress": "dilani@gmail.com",
+    "country":"SriLanka",
+    "address":"no: 1/71, Colombo, SriLanka"
+  },
+  {
+    "id":3,
+    "firstname": "Mark",
+    "lastname": "Dan",
+    "emailaddress": "markweb@gmail.com",
+    "country":"NewZealand",
+    "address":"Aukland, NewZealand"
+  },
+  {
+    "id":4,
+    "firstname": "Jane",
+    "lastname": "Doagh",
+    "emailaddress": "Jane81@gmail.com",
+    "country":"United States",
+    "address":"No:16/900,Gabriel Road, United States"
+  },
+  {
+    "id":5,
+    "firstname": "Lee",
+    "lastname": "Zin Zoo",
+    "emailaddress": "LeeZinZoo@gmail.com",
+    "country":"China",
+    "address":"no: 13/130, China Road, China"
+  }
+  ]
+}

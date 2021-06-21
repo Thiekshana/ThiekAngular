@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn;
+
+  constructor() {
+    this.isLoggedIn = false;
+   }
 
   ngOnInit() {
+    let user = sessionStorage.getItem("Username");
+    let pass = sessionStorage.getItem("Password");
+
+    (this.isLoggedIn) = (user=='Avensys' && pass=='Avensys123') ? true : false;
+
   }
 
 }

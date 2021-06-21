@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { ServicesListComponent } from './services-list/services-list.component';
 
 // lazy laoded Service module
 import { ServicesModule } from './services/services.module';
+import { MypostsModule } from './myposts/myposts.module';
+
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 
@@ -39,6 +43,12 @@ import { AboutgroupComponent } from './about/aboutgroup/aboutgroup.component';
 import { AboutService } from './about.service';
 import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './blog/posts/posts.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsDisplayComponent } from './products-display/products-display.component';
+import { MypostsService } from './_services/myposts.service';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+
 
 @NgModule({
   declarations: [
@@ -69,16 +79,22 @@ import { PostsComponent } from './blog/posts/posts.component';
     AboutusComponent,
     AboutgroupComponent,
     BlogComponent,
-    PostsComponent
+    PostsComponent,
+    ProductsComponent,
+    ProductsListComponent,
+    ProductsDisplayComponent,
+    AdminpanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ServicesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MypostsModule
   ],
-  providers: [UnsavedChangesGuard, FormGuard, AboutService],
+  providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

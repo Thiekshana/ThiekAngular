@@ -1,6 +1,7 @@
 import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef,ChangeDetectionStrategy,DoCheck,OnChanges, Input } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Users } from '../_helpers/interfaces/userDetails';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,7 @@ export class SignUpComponent implements OnInit {
   @Output() PostData = new EventEmitter<Users>();
   @Input('user') user;
   @ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
-  constructor(private formBuilder: FormBuilder ) {
+  constructor(private formBuilder: FormBuilder, private http:HttpClientModule ) {
     this.submited = false;
    }
 
@@ -29,6 +30,11 @@ export class SignUpComponent implements OnInit {
       country:['',Validators.required],
       address:['',Validators.required]
     });
+
+/*     fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => console.log(json)) */
+    
     console.log("NgOnInit()");
 
   }

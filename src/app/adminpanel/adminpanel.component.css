@@ -1,0 +1,18 @@
+.table thead td tr{
+  text-align: center;
+  align-content: center;
+}
+
+thead{
+  font: 500 larger bold ;
+  border: 10px black;
+}
+
+tbody > tr> td{
+  color: rgb(255, 0, 119);
+}
+
+img{
+  height: 50px;
+  width: 50px;
+}
