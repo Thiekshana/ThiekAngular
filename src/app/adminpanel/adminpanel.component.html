@@ -1,6 +1,7 @@
 <section class="container">
   <section class="row">
     <h1>List of Users</h1>
+    <hr>
     <span style="font-size: x-large;margin-bottom: 50px;margin-top: 50px;" class="fa fa-plus-circle float-left" role="button" title="Create new post" data-bs-toggle="modal" data-bs-target="#addUser"> Create User</span>
 
     <section class="col-md-12">
@@ -24,7 +25,7 @@
             <td>{{user.country}}</td>
             <td>{{user.address}}</td>
             <td>
-             <a href="#" data-bs-toggle="modal" data-bs-target="#editUser" (click)="usertoEdit(user)"> <img src="assets/images/minus.png"></a>
+             <a href="#" data-bs-toggle="modal" data-bs-target="#editUser" (click)="usertoEdit(user)"> <img src="assets/images/update.png"></a>
             </td>
             <td>
               <a href="#" routerLink="./" (click)="deleteUser(user.id)"> <img src="assets/images/delete.png"></a>

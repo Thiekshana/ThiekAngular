@@ -1,15 +1,21 @@
 .table thead td tr{
   text-align: center;
   align-content: center;
-}
 
+}
+h1{
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(238, 0, 167);
+}
 thead{
-  font: 500 larger bold ;
-  border: 10px black;
+  font-size: x-large;
+  color: coral;
+
 }
 
 tbody > tr> td{
-  color: rgb(255, 0, 119);
+  color: rgb(16, 0, 104);
 }
 
 img{
