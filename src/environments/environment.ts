@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiHost:'http://localhost:3000'
+  apiHost:'http://thiekshana-001-site1.ftempurl.com/api'
+  //apiHost:'https://localhost:44328/api'
   //apiHost:'https://jsonplaceholder.typicode.com'
 };
 

@@ -17,6 +17,7 @@ import { MypostsComponent } from './myposts/myposts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsComponent } from './products/products.component';
+import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 import { SessiondataComponent } from './sessiondata/sessiondata.component';
 import { StickynotesComponent } from './stickynotes/stickynotes.component';
 import { TdcontactComponent } from './tdcontact/tdcontact.component';
@@ -84,6 +85,9 @@ const routes: Routes = [
   },
   {
     path:'adminpanel',component: AdminpanelComponent
+  },
+  {
+    path:'pns',component: PushnotificationComponent
   },
   {
     path:'**',component: PageNotFoundComponent

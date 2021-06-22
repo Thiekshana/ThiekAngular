@@ -19,8 +19,8 @@
         <tbody>
           <tr *ngFor="let user of users,let i=index">
             <td>{{i+1}}</td>
-            <td>{{user.firstname}}</td>
-            <td>{{user.lastname}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
             <td>{{user.email}}</td>
             <td>{{user.country}}</td>
             <td>{{user.address}}</td>
@@ -39,7 +39,6 @@
 
 <!--Modal Section-->
 <!-- Modal For Add User -->
-<Section>
 <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -54,12 +53,12 @@
               <div class="card-text p-1">
               <form #f="ngForm" (ngSubmit)="createUser()">
                 <div class="form-group">
-                <label for="firstname" class="form-label">First Name</label>
-                <input type="text" name="firstname"  class="form-control" [(ngModel)]="firstname">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" name="firstName"  class="form-control" [(ngModel)]="firstName">
                 </div>
                 <div class="form-group">
-                <label for="lastname" class="form-label">Last Name</label>
-                <input type="text" name="lastname"  class="form-control" [(ngModel)]="lastname" >
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" name="lastName"  class="form-control" [(ngModel)]="lastName" >
                 </div>
                 <div class="form-group">
                 <label for="email" class="form-label">Email</label> 
@@ -93,11 +92,8 @@
     </div>
   </div>
 </div>
-</Section>
-
 
 <!--Edit Modal Section-->
-
 <Section>
   <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -113,12 +109,12 @@
                 <div class="card-text p-1">
                 <form #f="ngForm" (ngSubmit)="updateUser()">
                   <div class="form-group">
-                  <label for="firstname" class="form-label">First Name</label>
-                  <input type="text" name="firstname"  class="form-control" [(ngModel)]="usertoUpdate.firstname">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" name="firstName"  class="form-control" [(ngModel)]="usertoUpdate.firstName">
                   </div>
                   <div class="form-group">
-                  <label for="lastname" class="form-label">Last Name</label>
-                  <input type="text" name="lastname"  class="form-control" [(ngModel)]="usertoUpdate.lastname" >
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" name="lastName"  class="form-control" [(ngModel)]="usertoUpdate.lastName" >
                   </div>
                   <div class="form-group">
                   <label for="email" class="form-label">Email</label> 

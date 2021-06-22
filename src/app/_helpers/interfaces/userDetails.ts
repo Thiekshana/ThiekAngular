@@ -1,6 +1,6 @@
 export interface Users{
-  firstname:string,
-  lastname:string,
+  firstName:string,
+  lastName:string,
   email:string,
   country:string,
   address:string

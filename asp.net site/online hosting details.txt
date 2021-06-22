@@ -1,0 +1,4 @@
+FTP Address :	FTP.SITE4NOW.NET
+FTP Username :	thiekshana-001
+FTP Password :	(same as your control panel password)
+FTP Directory:	

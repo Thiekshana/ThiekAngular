@@ -48,7 +48,9 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsDisplayComponent } from './products-display/products-display.component';
 import { MypostsService } from './_services/myposts.service';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
-
+import { PushnotificationComponent } from './pushnotification/pushnotification.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,8 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     ProductsComponent,
     ProductsListComponent,
     ProductsDisplayComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    PushnotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +95,9 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MypostsModule
+    MypostsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService],
   bootstrap: [AppComponent]

@@ -12,16 +12,16 @@ export class AdminpanelComponent implements OnInit {
 
   users:Users;
 
-  firstname:string;
-  lastname:string;
+  firstName:string;
+  lastName:string;
   email:string;
   country:string;
   address:string;
 
   usertoUpdate = {
     id:null,
-    firstname:"",
-    lastname:"",
+    firstName:"",
+    lastName:"",
     email:"",
     country:"",
     address:""
@@ -52,8 +52,8 @@ export class AdminpanelComponent implements OnInit {
   createUser()
   {
     let userObj ={
-      firstname: this.firstname,
-      lastname: this.lastname,
+      firstName: this.firstName,
+      lastName: this.lastName,
       address:this.address,
       email:this.email,
       country:this.country
