@@ -40,7 +40,6 @@ import { IterationDirective } from './_directives/iteration.directive';
 import { StickynotesComponent } from './stickynotes/stickynotes.component';
 import { AboutusComponent } from './about/aboutus/aboutus.component';
 import { AboutgroupComponent } from './about/aboutgroup/aboutgroup.component';
-import { AboutService } from './about.service';
 import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './blog/posts/posts.component';
 import { ProductsComponent } from './products/products.component';
@@ -51,6 +50,8 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { AboutService } from './_services/about.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductsListComponent,
     ProductsDisplayComponent,
     AdminpanelComponent,
-    PushnotificationComponent
+    PushnotificationComponent,
+    RxjsOperatorsComponent
   ],
   imports: [
     BrowserModule,

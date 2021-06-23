@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AboutService } from 'src/app/about.service';
+import { AboutService } from 'src/app/_services/about.service';
 
 @Component({
   selector: 'app-aboutgroup',
@@ -9,11 +9,14 @@ import { AboutService } from 'src/app/about.service';
 export class AboutgroupComponent implements OnInit {
 
   people = [];
-  constructor(private _data:AboutService) { }
+
+  constructor(private aboutService:AboutService) { }
 
   ngOnInit() {
-    this._data.currentMessage.subscribe(people => this.people = people);
+    //this.aboutService.currentObject.subscribe(people => this.people = people);
+    
   }
+
   getPeople()
   {
     this.people = [{
@@ -41,7 +44,8 @@ export class AboutgroupComponent implements OnInit {
       button:"View More"
     }
     ];
-    this._data.changeMessage(this.people);
+    this.aboutService.emitPeopleData(this.people);
+    console.log(this.people);
     
   }
 

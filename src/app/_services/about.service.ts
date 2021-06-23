@@ -6,15 +6,18 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 })
 export class AboutService {
 
-  ourPeople= [];
+  object= [];
 
-  private source = new BehaviorSubject<any>(this.ourPeople);
-  currentMessage = this.source.asObservable();
+  private subject = new BehaviorSubject<any>(this.object);
+  currentObject = this.subject.asObservable();
   
   constructor() { }
 
-  changeMessage(message:any)
+  emitPeopleData(peopleObject:any)
   {
-    this.source.next(message); 
+    this.subject.next(peopleObject); 
   }
 }
+
+
+    
