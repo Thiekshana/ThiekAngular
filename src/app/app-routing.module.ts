@@ -50,7 +50,7 @@ const routes: Routes = [
     path:'contact', component: ContactComponent, canDeactivate:[FormGuard]
   },
   {
-    path:'login', component: LoginComponent,canDeactivate:[UnsavedChangesGuard]
+    path:'login', component: LoginComponent
   },
   {
     path:'signup',component: ListOfRegisteredUsersComponent
@@ -99,6 +99,9 @@ const routes: Routes = [
   },
   {
     path:'rsjxOperators',component: RxjsOperatorsComponent
+  },
+  {
+    path:'dashboard',loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path:'**',component: PageNotFoundComponent

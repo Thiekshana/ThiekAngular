@@ -105,9 +105,7 @@ export class PipesComponent implements OnInit {
     this.customPipeMessage = "Singapore";
     this.customPipeNumber = 23;
     //console.log(service.getUsers());
-    service.users.subscribe(
-      data=>this.display = data,
-    )
+   
     console.log(this.display);
   }
 

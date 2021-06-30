@@ -1,0 +1,7 @@
+<h1>Users</h1>
+<ul>
+  <p>Users from API</p>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+<h3>Admin Chart here</h3>
+<div echarts [options]="chartOption" class="demo-chart"></div>

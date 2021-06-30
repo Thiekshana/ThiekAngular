@@ -57,7 +57,14 @@ import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipePipe } from './custom-pipe.pipe';
 import { DetermineTypePipe } from './determine-type.pipe';
 import { SearchPipePipe } from './search-pipe.pipe';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { JwtModule } from "@auth0/angular-jwt";
+import { AuthGuardService } from './_services/auth-guard.service';
+import { NgxEchartsModule } from 'ngx-echarts';
 
+export function tokenGetter() {
+  return sessionStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -111,9 +118,18 @@ import { SearchPipePipe } from './search-pipe.pipe';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     MatIconModule,
-    MaterialModule
+    MaterialModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
+    GoogleChartsModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter     
+      }
+    })
   ],
-  providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService],
+  providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
