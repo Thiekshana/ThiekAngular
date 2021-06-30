@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from 'src/app/_services/auth-service.service';
 
 
 @Component({
@@ -88,10 +89,21 @@ export class AdminDashBoardComponent implements OnInit {
     ]
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService:AuthServiceService) { 
+
+  }
 
   ngOnInit() {
-    this.http.get("http://localhost:5000/api/customer", {
+
+    this.authService.getUsers().subscribe(res=>{
+      console.log(res);
+      this.users = res
+    },err => {
+      console.log(err)
+    }
+    )
+    
+    /* this.http.get("http://localhost:5000/api/customer", {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -99,7 +111,7 @@ export class AdminDashBoardComponent implements OnInit {
       this.users = response;
     }, err => {
       console.log(err)
-    });
+    }); */
   }
 
 }

@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       const token = (<any>response).token;
       sessionStorage.setItem("jwt", token);
       this.invalidLogin = false;
-      this.router.navigate(["/"]);
+      this.router.navigate(["/dashboard/adminDashboard"]);
     }, err => {
       this.invalidLogin = true;
     });

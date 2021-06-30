@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +61,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthGuardService } from './_services/auth-guard.service';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { TokenInterceptorService } from './_services/token-interceptor.service';
+
 
 export function tokenGetter() {
   return sessionStorage.getItem("jwt");
@@ -129,7 +131,11 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService,AuthGuardService],
+  providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService,AuthGuardService,{
+    provide : HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
