@@ -1,0 +1,4 @@
+
+
+add-migration MyFirstMigration
+Update-Database

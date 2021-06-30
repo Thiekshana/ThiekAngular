@@ -13,17 +13,17 @@ export class MypostsService {
   constructor(private http:HttpClient) { }
 
   
-  getPOsts():Observable<any>{
+  getPOsts():Observable<any[]>{
    /*  this.http.get(environment.apiHost+'/posts').subscribe(data=>
       {
       this.posts = data;
       console.log(this.posts);
       }); */
-      return this.http.get(environment.apiHost+'/posts');
+      return this.http.get<any[]>(environment.apiHost+'/posts');
   }
 
-  getSinglePost(pid):Observable<any>{
-    return this.http.get(environment.apiHost+'/posts/'+pid);
+  getSinglePost(pid):Observable<any[]>{
+    return this.http.get<any[]>(environment.apiHost+'/posts/'+pid);
   }
 
   createPost(payload):Observable<any>{

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ export class LoginComponent implements OnInit {
   user:any;
   pass:string;
   //model:any;
-  constructor() {
+  constructor(private router:Router, private http:HttpClient) {
 
   }
 

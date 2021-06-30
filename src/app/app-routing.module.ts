@@ -15,6 +15,7 @@ import { ListOfRegisteredUsersComponent } from './list-of-registered-users/list-
 import { LoginComponent } from './login/login.component';
 import { MypostsComponent } from './myposts/myposts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PipesComponent } from './pipes/pipes.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsComponent } from './products/products.component';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
@@ -85,10 +86,16 @@ const routes: Routes = [
     path:'myposts',loadChildren: () => import('./myposts/myposts.module').then(m => m.MypostsModule)
   },
   {
+    path:'material-loading',loadChildren: () => import('./_material/_material.module').then(m => m.MaterialModule)
+  },
+  {
     path:'adminpanel',component: AdminpanelComponent
   },
   {
     path:'pns',component: PushnotificationComponent
+  },
+  {
+    path:'pipes',component: PipesComponent
   },
   {
     path:'rsjxOperators',component: RxjsOperatorsComponent

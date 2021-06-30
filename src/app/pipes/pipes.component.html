@@ -1,0 +1,78 @@
+<h2>Predefined Pipes</h2>
+<h3>Date Pipe</h3>
+<ul>
+  <li> Today = {{ today | date }}</li>
+  <li> Today = {{ today | date:"MM/dd/yy" }}</li>
+</ul>
+
+<h3>Uppercase & LowerCase</h3>
+<ul>
+  <li> {{ firstName | lowercase}} {{ lastName | uppercase}}</li>
+</ul>
+
+<h3>Currency Pipes</h3>
+<ul>
+  <li>{{ productPrice | currency :'EUR'}}</li>
+  <li>{{ discountedPrice | number: '1.1-2' }}</li>
+</ul>
+
+<h3>Json Pipe</h3>
+<ul>
+  <li>{{ jsonObject | json }}</li>
+</ul>
+
+
+<h3>Custom Pipe</h3>
+<ul>
+  <li>{{ myobj | customPipe }}</li>
+</ul>
+
+<h3>Determine Object</h3>
+<form>
+<select name="selectedValue" ([ngModel])= "selectedValue" (change) = "selectChangeHandler($event.target)">
+  <option value=""> ...select...</option>
+  <option [ngValue]="myString">Text</option>
+  <option [ngValue]="myArray">Array</option>
+  <option [ngValue]="myArrayofObj">ArrayOfObjects</option>
+  <option [ngValue]="myobj">Object</option>
+</select>
+</form>
+<ul>
+  <li>{{ selectedValue }}</li>
+  <li>{{ selectedValue | determineType }}</li>
+</ul>
+
+<h3>Search Posts</h3>
+<div class="content" role="main">
+  <div class="card">
+    <div class="form-group">
+      <label for="search-text">Search Text</label>
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="searchText" placeholder="Enter text to search" 
+        autofocus>
+    </div>
+    <ul class="list-group list-group-flush">
+      <table class="table table-striped">
+        <tr>
+          <th>Character</th>
+          <th>Post Title</th>
+          <th>Post Description</th> 
+        </tr>
+      <tbody>
+        <tr  *ngFor="let post of Post | searchPipe: searchText">
+          <td>{{post.character}}</td>
+          <td>{{post.title}}</td>
+          <td>{{post.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </ul>
+  </div>
+</div>
+
+<h3>Search Posts</h3>
+<p>{{display }}</p>
+
+
+
+

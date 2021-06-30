@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { fromEvent, of, Subject } from 'rxjs';
+import { first, map,takeLast,takeUntil,takeWhile  } from 'rxjs/operators';
+import { switchMap,mergeMap, tap, delay } from 'rxjs/operators';
 import { MypostsService } from '../_services/myposts.service';
-
 
 
 @Component({
@@ -10,8 +12,10 @@ import { MypostsService } from '../_services/myposts.service';
 })
 export class MypostsComponent implements OnInit {
   posts:any;
+  startClick = new Subject<void>();
   constructor(private postService:MypostsService) { }
 
+  count = 0;
   ngOnInit() {
    /*  this.http.get(environment.apiHost+'/posts').subscribe(data=>
       {
@@ -33,10 +37,60 @@ export class MypostsComponent implements OnInit {
           }
         }
       });
+
+        const switchMapSample = this.postService.getPOsts().pipe(
+        switchMap(posts => {
+          return this.postService.getSinglePost(1).pipe(
+            delay(1000),
+            tap(singlePost => {
+              console.log(posts)
+              console.log(singlePost)
+            })
+          )
+        })
+      )
+      switchMapSample.subscribe(r => console.log(r));
+ 
+      const mergeMapSample = this.postService.getPOsts().pipe(
+        mergeMap(posts => {
+          return this.postService.getSinglePost(1).pipe(
+            delay(1000),
+            map(singlePost => {
+              const allPosts = {singlePost,posts};
+              return allPosts;
+            })
+          )
+        })
+      )
+      mergeMapSample.subscribe(r => console.log(r));
+
+      const sourceforFirstOPerator = fromEvent(document,'click');
+      sourceforFirstOPerator.pipe(first()).subscribe(()=>{
+        console.log("Document is clicked only once");
+      })
+
+      const sourceTakeWhile = fromEvent(document,'click');
+      sourceTakeWhile.pipe(takeWhile(()=>this.count<3)).subscribe(()=>{
+        console.log("Document is clicked");
+        this.count++;
+      })
+
+      const sourceTakeLast = of('Angular','ReactJs','VueJs');
+      sourceTakeLast.pipe(takeLast(2)).subscribe((r => console.log(r)))
+
+      sourceTakeWhile.pipe(takeUntil(this.startClick)).subscribe(()=>{
+        console.log("clicked");
+      })
+
+  }
+
+  stopClick(){
+    this.startClick.next();
+    this.startClick.complete();
   }
 
   createPost(){
-    let postObj  = {
+/*     let postObj  = {
       title:'Accenture',
       body:'Avensys',
       userId:1
@@ -44,7 +98,8 @@ export class MypostsComponent implements OnInit {
 
     this.postService.createPost(postObj).subscribe(data=>{
       console.log(data);
-    })
+    }) */
+      //switchMap
 
   }
 

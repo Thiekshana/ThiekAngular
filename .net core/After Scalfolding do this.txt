@@ -1,0 +1,26 @@
+Install NuGet Pckagages
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SQL
+
+DBContext.cs inherti from IdentityDbContext
+
+ public partial class AngularContext : IdentityDbContext
+
+Change
+
+ protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder); *
+
+Run these to Migrate,  update DB
+
+add-migration initial -context AngularContext
+Add-Migration AddingIdentity
+update-database
+
+
+watch
+
+https://www.youtube.com/watch?v=TuJd2Ez9i3I&t=7s

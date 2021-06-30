@@ -15,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesListComponent } from './services-list/services-list.component';
-
+import {MatIconModule} from '@angular/material/icon';
 // lazy laoded Service module
 import { ServicesModule } from './services/services.module';
 import { MypostsModule } from './myposts/myposts.module';
@@ -52,6 +52,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { AboutService } from './_services/about.service';
+import { MaterialModule } from './_material/_material.module';
+import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipePipe } from './custom-pipe.pipe';
+import { DetermineTypePipe } from './determine-type.pipe';
+import { SearchPipePipe } from './search-pipe.pipe';
+
 
 @NgModule({
   declarations: [
@@ -88,7 +94,11 @@ import { AboutService } from './_services/about.service';
     ProductsDisplayComponent,
     AdminpanelComponent,
     PushnotificationComponent,
-    RxjsOperatorsComponent
+    RxjsOperatorsComponent,
+    PipesComponent,
+    CustomPipePipe,
+    DetermineTypePipe,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,
@@ -99,7 +109,9 @@ import { AboutService } from './_services/about.service';
     HttpClientModule,
     MypostsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MaterialModule
   ],
   providers: [UnsavedChangesGuard, FormGuard, AboutService,MypostsService],
   bootstrap: [AppComponent]
